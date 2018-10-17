@@ -1,0 +1,121 @@
+
+
+.tab-card {
+  border:1px solid #eee;
+}
+
+.tab-card-header {
+  background:none;
+}
+/* Default mode */
+.tab-card-header > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tab-card-header > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tab-card-header > .nav-tabs > li > a {
+  border: 0;
+  border-bottom:2px solid transparent;
+  margin-right: 0;
+  color: #737373;
+  padding: 2px 15px;
+}
+
+.tab-card-header > .nav-tabs > li > a.show {
+    border-bottom:2px solid #007bff;
+    color: #007bff;
+}
+.tab-card-header > .nav-tabs > li > a:hover {
+    color: #007bff;
+}
+
+.tab-card-header > .tab-content {
+  padding-bottom: 0;
+}
+
+.row .col-md-4{
+	padding-bottom:10px;
+}
+.card-block, div{
+	text-align: center;
+}
+
+/
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main{
+	align-text:center;
+    display: -webkit-inline-box;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .icon-bar {display: -webkit-box;}
+}
+
+
+.h-100{
+	text-align: -webkit-center;
+}
+
+body{
+	background-color: #31a8df;
+}
+
+
+.fbox-icon img:hover {
+    opacity: .5;
+}
+.icon-bar {
+    display: -webkit-inline-box;
+    background-color: #1d1d1d69;
+    position: relative;
+    top: 31px;
+    left: 0%;
+}
+
+.icon-bar a {
+    
+    background-color: #1d1d1d69;
+}
+
+
+@media (max-width: 575px){}
+	.feature-box.fbox-plain .fbox-icon img {
+    height: 50px;
+    position: relative;
+    top: 1px;
+    width: auto;
+	}
+	.postcontent, .sidebar, .col_full, .col_half, .col_one_third, .col_two_third, .col_three_fourth, .col_one_fourth, .col_one_fifth, .col_two_fifth, .col_three_fifth, .col_four_fifth, .col_one_sixth, .col_five_sixth {
+    display: block;
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 7px;
+    float: left;
+    /* right: -2%; */
+    left: 2%;
+}
+@media screen and (min-width: 768px){
+	.icon-bar{
+    	background-color: #1d1d1d69;
+    	position: relative;
+    	left: 45%;
+    	width:0%;
+    	display: -webkit-box;
+	}
+	.icon-bar a{	
+		background-color: #1d1d1d69;
+	
+	}
+	.container{
+		display: grid;
+	}	
+	
+	
+	
+}

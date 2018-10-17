@@ -1,0 +1,1 @@
+web: gunicorn vet360_connect_web.wsgi --log-file -

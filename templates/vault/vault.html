@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connect App</title>
+    <link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	<link rel="icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+      }
+    </style>
+    <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/canvas.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/dark.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-icons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vet360Fonts.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vault.css" %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href= {% url 'home' %}><span><img src="{% static "assets/img/connect_logo.png" %}"></span> </a><button id ="menu" class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav nav-left">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">home </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">about </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="faq.html">faq </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">contact </a></li>
+                </ul>
+                	<script>var href = "{% url 'logout' %}"</script>
+                	<button type="button" class="btn btn-primary" id="logoutBtn"  onclick="window.location = href">Logout</button>
+        
+        	</div>                
+                
+               
+        </div>
+      
+    </nav>
+  
+    
+   <div class = container id ="main_container">
+   
+     <div class="icon-bar">
+		  <a href={% url 'home' %}><i class="icon-transfer"></i></a> 
+		  <a href={% url 'vault' %}><i class="icon-file-cabinet"></i></a>
+		  <a href="#"><i class="icon-red-cross"></i></a> 
+		
+	</div>
+   
+   
+   <div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href={% url 'vault_volunteer' %}><img src="/static/assets/img/num_1.png"></a>
+							</div>
+							<h3>VOLUNTEERISM</h3>
+							<p>Want to make a difference in someone's life?</p>
+						</div>
+	</div>
+	 <div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href="#"><img src="{% static "assets/img/num_2.png" %}"></a>
+							</div>
+							<h3>FINANCES</h3>
+							<p>Need help on how to buy a car or home BEFORE you buy?</p>
+						</div>
+	</div>
+	 <div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href="#"><img src="{% static "assets/img/num_3.png" %}"></a>
+							</div>
+							<h3>CAREER PREP.</h3>
+							<p>Need help getting ready for the next big interview?</p>
+						</div>
+	</div>
+	<div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href="#"><img src="{% static "assets/img/num_4.png" %}"></a>
+							</div>
+							<h3>EDUCATION</h3>
+							<p>Where do you want to go to school and why?</p>
+						</div>
+	</div>
+	<div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href="#"><img src="{% static "assets/img/num_5.png" %}"></a>
+							</div>
+							<h3>MENTAL HEALTH</h3>
+							<p>General mental health questions and support.</p>
+						</div>
+	</div>
+	<div class="col_one_third">
+						<div class="feature-box fbox-plain">
+							<div class="fbox-icon" data-animate="bounceIn">
+								<a href="#"><img src="{% static "assets/img/num_6.png" %}"></a>
+							</div>
+							<h3>WOUNDED WARRIOR PROJ.</h3>
+							<p>Learn more about the largest veterans support team in the country</p>
+						</div>
+	</div>
+</div>
+
+   <!-- Use any element to open the sidenav -->
+   <!--  <div id="mySidenav" class="sidenav">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  		<a href="#">About</a>
+  		<a href="#">Services</a>
+  		<a href="#">Clients</a>
+  		<a href="#">Contact</a>
+	</div> -->
+
+
+
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<!-- <div id="main row">
+		<button type="button" class="btn btn-primary" id="vaultToggle" onclick="openNav()">The Vault</button>
+	
+</div>   
+   	
+ 
+    <!-- 
+     <div id="map">
+     	
+     	</div>
+  	 -->
+    <script src="{% static "assets/js/jquery.js" %}"></script>
+   <!--  <script src="{% static "assets/js/gMap.js" %}"></script>  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjeTK1U2DLlLUdmzMBEpnhRgZi7M4I5dg&callback=initMap"
+    async defer></script> -->
+     <script src="{% static "assets/js/functions.js" %}"></script>
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <script src="{% static "assets/js/scripts.js" %}"></script>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/bootstrap/js/bootstrap.min.js" %}"></script>
+      
+</body>
+
+</html>

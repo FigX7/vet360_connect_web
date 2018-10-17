@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connect App</title>
+    <link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	<link rel="icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+      }
+    </style>
+    <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/canvas.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/dark.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-icons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vet360Fonts.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vault.css" %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href= {% url 'home' %}><span><img src="{% static "assets/img/connect_logo.png" %}"></span> </a><button id ="menu" class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav nav-left">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">home </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">about </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="faq.html">faq </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">contact </a></li>
+                </ul>
+                	<script>var href = "{% url 'logout' %}"</script>
+                	<button type="button" class="btn btn-primary" id="logoutBtn"  onclick="window.location = href">Logout</button>
+        
+        	</div>                
+                
+               
+        </div>
+      
+    </nav>
+    
+     <div class="container" id="content_Main">
+   		<div class="icon-bar">
+		  <a href={% url 'home' %}><i class="icon-transfer"></i></a> 
+		  <a href={% url 'vault' %}><i class="icon-file-cabinet"></i></a>
+		  <a href="#"><i class="icon-red-cross"></i></a> 
+		
+	</div>
+   
+   
+    <div class="row">
+    
+        <div class="col-sm-4 py-2">
+            <div class="card card-body h-100">
+                 <div>
+                 	<img src="{% static "assets/img/rwb_300_300.png" %}" height="100" width = "150"></div>
+	              	<p class="card-text p-y-1">Team RWB’s mission is to enrich the lives of America’s veterans by connecting them to their community through physical and social activity.</p>
+	              	<a href="#" class="card-link">link</a>
+	              	<a href="#" class="card-link">Second link</a>
+          		  
+            </div>
+        </div>
+        <div class="col-sm-4 py-2">
+            <div class="card h-100">
+                <div class="card-body">
+                     <div><img src="{% static "assets/img/team_rubicon.jpg" %}" height="150" width = "100"></div> 				
+		              <p class="card-text p-y-1">Team Rubicon unites the skills and experiences of military veterans with first responders to rapidly deploy emergency response teams</p>
+		              <a href="#" class="card-link">link</a>
+		              <a href="#" class="card-link">Second link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 py-2">
+            <div class="card h-100 card-body">
+              <div><img src="{% static "assets/img/the_mission_continues.png" %}" height="100" width = "150"></div>
+             
+              		<p class="card-text p-y-1">TMC empowers veterans who are adjusting to life at home to find purpose through community impact. We re-deploy veterans who wish to serve again</p>
+             	 	<a href="#" class="card-link">link</a>
+             		<a href="#" class="card-link">Second link</a>
+            </div>
+        </div>
+        <div class="col-sm-4 py-2">
+            <div class="card h-100 ">
+                <div class="card-body">
+                   <div><img src="{% static "assets/img/travis_manion.png" %}" height="150" width = "200"></div>
+              
+             	 		<p class="card-text p-y-1">“If not me, then who…”, Travis’s words before leaving for his final deployment to Iraq where he was KIA. They have inspired a national movement to service.</p>
+              			<a href="#" class="card-link">link</a>
+              			<a href="#" class="card-link">Second link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+      
+<script src="{% static "assets/js/jquery.js" %}"></script>
+   <!--  <script src="{% static "assets/js/gMap.js" %}"></script>  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjeTK1U2DLlLUdmzMBEpnhRgZi7M4I5dg&callback=initMap"
+    async defer></script> -->
+     <script src="{% static "assets/js/functions.js" %}"></script>
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <script src="{% static "assets/js/scripts.js" %}"></script>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/bootstrap/js/bootstrap.min.js" %}"></script>
+      
+</body>
+
+</html>

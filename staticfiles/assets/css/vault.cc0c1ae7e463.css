@@ -1,0 +1,122 @@
+.row .col-md-4{
+	padding-bottom:10px;
+}
+.card-block, div{
+	text-align: center;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 50%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 10; /* Stay at the top */
+    left: 0;
+    background-color: #fec126c9; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main{
+	align-text:center;
+    display: -webkit-inline-box;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .icon-bar {display: -webkit-box;}
+}
+
+
+.h-100{
+	text-align: -webkit-center;
+}
+
+body{
+	background-color: #fec126;
+}
+
+
+.fbox-icon img:hover {
+    opacity: .5;
+}
+.icon-bar {
+    display: -webkit-inline-box;
+    background-color: #1d1d1d69;
+    position: relative;
+    top: 31px;
+    left: 0%;
+}
+
+.icon-bar a {
+    
+    background-color: #1d1d1d69;
+}
+
+
+@media (max-width: 575px){}
+	.feature-box.fbox-plain .fbox-icon img {
+    height: 50px;
+    position: relative;
+    top: 1px;
+    width: auto;
+	}
+	.postcontent, .sidebar, .col_full, .col_half, .col_one_third, .col_two_third, .col_three_fourth, .col_one_fourth, .col_one_fifth, .col_two_fifth, .col_three_fifth, .col_four_fifth, .col_one_sixth, .col_five_sixth {
+    display: block;
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 7px;
+    float: left;
+    /* right: -2%; */
+    left: 2%;
+}
+@media screen and (min-width: 768px){
+	.icon-bar{
+    	background-color: #1d1d1d69;
+    	position: relative;
+    	left: 45%;
+    	width:0%;
+    	display: -webkit-box;
+	}
+	.icon-bar a{	
+		background-color: #1d1d1d69;
+	
+	}
+	.container{
+		display: grid;
+	}	
+	#main_container{
+		
+	}
+	
+	
+}

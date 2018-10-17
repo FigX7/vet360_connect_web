@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "vet360";
+  src:url("fonts/vet360.eot");
+  src:url("fonts/vet360.eot?#iefix") format("embedded-opentype"),
+    url("fonts/vet360.woff") format("woff"),
+    url("fonts/vet360.ttf") format("truetype"),
+    url("fonts/vet360.svg#vet360") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "vet360" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "vet360" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-transfer:before {
+  content: "\74";
+  color:#5ac1a7;
+}
+.icon-red-cross:before {
+  content: "\72";
+  color:#ee3454;
+  font-weight: bold !important;;
+}
+.icon-file-cabinet:before {
+  content: "\66";
+  color:#4f9cbf;
+}
+.icon-social-twitter:before {
+  content: "\61";
+}
+.icon-social-pinterest:before {
+  content: "\62";
+}
+.icon-social-facebook:before {
+  content: "\63";
+}
+.icon-social-google-plus:before {
+  content: "\64";
+}
+.icon-social-instagram:before {
+  content: "\65";
+}
+.icon-social-snapchat:before {
+  content: "\67";
+}
+.icon-social-vimeo:before {
+  content: "\68";
+}
+.icon-map-marker:before {
+  content: "\69";
+}

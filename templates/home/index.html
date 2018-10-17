@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connect App</title>
+    <link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	<link rel="icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	
+    <style>
+      
+    </style>
+    
+    <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/canvas.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/dark.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-icons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vet360Fonts.css" %}">
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
+        <div class="container"><a class="navbar-brand img-fluid" href="#"><span><img src="{% static "assets/img/connect_logo.png" %}"></span> </a><button id="menu" class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav nav-right">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">home </a></li>
+                    <!--  Services Dropdown -->
+                    <!-- <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Services </a> -->
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="services.html">Price Packages</a><a class="dropdown-item" role="presentation" href="#">Order Services</a><a class="dropdown-item" role="presentation" href="#">Custom Request</a></div>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">about </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="faq.html">faq </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">contact </a></li>
+                   
+                    
+                </ul>
+                
+        </div>
+        </div>
+    </nav>
+    <div class="carousel slide" data-ride="carousel" id="carousel-1">
+	    <div class="carousel-inner">
+	        <div class="item active">
+	            <div class="jumbotron hero-nature carousel-hero focal-point right-3 up-3 window " >
+	                <h1 class="hero-title">Welcome Home</h1>
+	                <p class="hero-subtitle"></p>
+	                <div class="btn-group vet-res">
+					  <button type="button" class="btn btn-primary" id="vetBtn"  data-toggle="modal" class="btn" href="#loginModal">Veteran</button>
+					 
+					  <button type="button" class="btn btn-primary" id="partBtn" data-toggle="modal" data-target = "#partloginModal" class="btn" href="#partloginModal">Partners</button>
+					  
+					</div>
+	            </div>
+	        </div>
+	    </div>
+    
+	</div>
+	<section id="content" style="margin-bottom: 0px;">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="col_one_third">
+						<div class="feature-box fbox-border fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i class="icon-file-cabinet"></i></a>
+							</div>
+							<h3>Vault</h3>
+							<p>Single source repository of ALL transition related  support information in viewable and printable form. Live links to support and        education teams.  
+								RESPONSE </p>
+						</div>
+					</div>
+
+					<div class="col_one_third">
+						<div class="feature-box fbox-border fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i class="icon-transfer"></i></a>
+							</div>
+							<h3>Connect</h3>
+							<p>Real time mapping to identify local  resources and    fellow users. Live CONNECT to    fellow users, jobs, seminars and local events.  
+								CONNECT </p>
+						</div>
+					</div>
+
+					<div class="col_one_third col_last">
+						<div class="feature-box fbox-border fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i class="icon-red-cross"></i></a>
+							</div>
+							<h3>Response</h3>
+							<p>Real time crisis prevention and support. Live  CONNECT to preapproved support teams. Live  transfer and web connect</p>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+
+
+					<div class="clear"></div>
+
+				</div>
+
+				
+			</div>
+
+		</section>
+	<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+<div class="container">
+
+<div class="footer-widgets-wrap clearfix">
+<div class="col_two_fifth">
+<div class="widget clearfix">
+<img src="{% static "assets/img/connect_logo.png" %}" style="position: relative; opacity: 0.85; left: -10px; max-height: 80px; margin-bottom: 20px;" alt="Footer Logo">
+<p>CONNECT is the only advanced smartphone application that allows every member of the military community to CONNECT to information, resources and each other in one place. Their phones... </p>
+<div class="line" style="margin: 30px 0;"></div>
+<p class="ls1 t300" style="opacity: 0.6; font-size: 13px;">Copyrights © 2018 Vet360</p>
+</div>
+</div>
+<div class="col_three_fifth col_last">
+<div class="col_half">
+<h4 class="ls1 t400 uppercase">Popular Locations</h4>
+<div class="row">
+<div class="col-6 bottommargin-sm widget_links widget_real_estate_popular">
+<ul>
+<li><a href="#"><i class="icon-map-marker"></i> California</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Nevada</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Hawaii</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Washington</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Ottawa</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Virginia</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Ohio</a></li>
+</ul>
+</div>
+<div class="col-6 bottommargin-sm widget_links widget_real_estate_popular">
+<ul>
+<li><a href="#"><i class="icon-map-marker"></i> Oregon</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Colorado</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Kentucky</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Texas</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> Miami</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> New York</a></li>
+<li><a href="#"><i class="icon-map-marker"></i> New Jersey</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col_half col_last">
+<h4 class="ls1 t400 uppercase">Connect Socially</h4>
+<div class="bottommargin-sm clearfix">
+<a href="#" class="social-icon si-colored si-small si-rounded si-facebook" title="Facebook">
+<i class="icon-social-facebook"></i>
+<i class="icon-social-facebook"></i>
+</a>
+<a href="#" class="social-icon si-colored si-small si-rounded si-twitter" title="Twitter">
+<i class="icon-social-twitte"></i>
+<i class="icon-social-twitter"></i>
+</a>
+<a href="#" class="social-icon si-colored si-small si-rounded si-instagram" title="Instagram">
+<i class="icon-social-instagram"></i>
+<i class="icon-social-instagram"></i>
+							</a>
+
+</div>
+<div class="widget subscribe-widget subscribe-form clearfix" data-loader="button">
+<div class="widget-subscribe-form-result"></div>
+<form action="include/subscribe.php" role="form" method="post" class="nobottommargin" novalidate="novalidate">
+<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="sm-form-control not-dark required email" placeholder="Enter your Email">
+<button class="button button-3d button-black noleftmargin norightmargin" style="margin-top: 15px;" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+    <!-- Modal -->
+   
+			 
+	<!-- Modal -->
+   
+			 
+	<div class="modal hide" id="loginModal">
+    <div class="container">
+    <div id="loginbox" style="margin-top: 50px;" class="mainbox col-lg-6 offset-md-3 col-md-8 offset-sm-2">
+        <div class="card card-inverse card-info">
+            <div class="card-header">
+                <div class="card-title">Veteran Sign In</div>
+                <button type="button" aria-label="Close" id = "xBtn" data-toggle="modal" class="close" href="#loginModal">
+ 					 <span aria-hidden="true">&times;</span>
+				</button>
+                
+                <div style="padding-top: 15px; font-size: 85%;">Don't have an account! 
+							<a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()">Veteran Sign Up Here </a>
+                </div>
+            </div>
+            <div style="padding-top: 30px;" class="card-block">
+                <div style="display: none;" id="login-alert" class="alert alert-danger col-md-12"></div>
+                <form id="loginform" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                  	{% csrf_token %}
+
+					{{ form1.non_field_errors }}
+
+					  {% for hidden_field in form1.hidden_fields %}
+					    {{ hidden_field.errors }}
+					    {{ hidden_field }}
+					  {% endfor %}
+					
+					 {% if messages %}
+					<ul class="messages">
+					    {% for message in messages %}
+					    <li{% if message.error %} class="{{ message.error }}"{% endif %}>{{ message }}</li>
+					    {% endfor %}
+					</ul>
+					{% endif %}
+					
+					{% for field1 in form1.visible_fields %}
+						
+                    <div style="margin-bottom: 25px;" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                       
+                         {{ field1.errors }}	
+                       	 {{ form1.messages }}
+                   			{% if field1 == form1.password %}
+					
+							{% render_field field1 type="password" placeholder=field1.label %}
+						{% else %}
+					
+                        <input
+                       id="{{ field1.name }}"  name="{{ field1.name }}" value=""
+                        placeholder="{{ field1.label }}" />
+                    	{% endif %}    
+                    </div>
+                    {% endfor %}
+                    
+                    
+                     
+                    <div class="input-group">
+                        <div class="form-check">
+                            <label>  
+                                <input id="login-remember" type="checkbox" name="remember" value="1" />Remember me</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;" class="form-group">
+                        <!-- Button -->
+                        <div class="col-md-12 controls"> <a  > <input id="btn-login" type="submit" value="Login"  name="btn-login" class="btn btn-success" > </a>
+ 							<a id="btn-fblogin"href="#" class="btn btn-primary"  type="submit">Login with Facebook</a>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12 control">
+                            	<div style="float: right; font-size: 80%; position: relative; top: -10px;"><a href="#">Forgot password?</a>
+            
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="signupbox" style="display: none; margin-top: 50px;" class="mainbox col-lg-6 offset-md-3 col-md-8 offset-sm-2">
+        <div class="card card-inverse card-info">
+            <div class="card-header">
+                <div class="card-title">Sign Up</div>
+                <div style="float: right; font-size: 85%; position: relative; top: -10px;"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a>
+                	<button type="button" aria-label="Close" id = "xBtn" data-toggle="modal" class="close" href="#loginModal">
+ 					 <span aria-hidden="true">&times;</span>
+				</button>
+                </div>
+            </div>
+            <div class="card-block">
+            
+                <form id="signupform" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                    <div id="signupalert" style="display: none;" class="alert alert-danger">
+                        <p>Error:</p> <span></span>
+                    </div>
+                    {% csrf_token %}
+
+					{{ form2.non_field_errors }}
+
+					  {% for hidden_field in form2.hidden_fields %}
+					    {{ hidden_field.errors }}
+					    {{ hidden_field }}
+					  {% endfor %}
+					
+					 
+					
+					{% for field2 in form2.visible_fields %}
+						
+                    <div style="margin-bottom: 25px;" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                       
+                       {% if field2 == form2.password1  or field2 == form2.password2 %}
+					
+							{% render_field field2 type="password" placeholder=field2.label %}
+						{% else %}
+							{% if not field2.value %}
+					
+		                        <input
+		                       	id="{{ field2.name }}"  name="{{ field2.name }}" value=""
+		                        placeholder="{{ field2.label }}" />
+				            {% else %}
+				            	<input
+		                       	id="{{ field2.name }}"  name="{{ field2.name }}" value="{{ field2.value }}"
+		                        placeholder="{{ field2.label }}" />
+                    		{% endif %}   
+                    	{% endif %}    
+                   		{{ field2.errors }}		
+                    </div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="offset-md-3 col-lg-9">
+                            <div class="col-md-12 controls"> <a  > <input id="btn-signup" type="submit" value="Signup"  name="btn-signup" class="btn btn-success" > 
+                            </a><span style="margin-left: 8px;">or</span> 
+                      	</div>	
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid #999; padding-top: 20px;" class="form-group">
+                        <div class="offset-md-3 col-lg-9">
+                            <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+	</div>
+	</div>
+	<!--=================Partner  Modal================= -->
+   
+			 
+	<div class="modal hide" id="partloginModal">
+    <div class="container">
+    <div id="partloginbox" style="margin-top: 50px;" class="mainbox col-lg-6 offset-md-3 col-md-8 offset-sm-2">
+        <div class="card card-inverse card-info">
+            <div class="card-header">
+                <div class="card-title">Partner Sign In</div>
+                <button type="button" aria-label="Close" id = "partxBtn" data-toggle="modal" data-target="#partloginModal" class="close" href="#partloginModal">
+ 					 <span aria-hidden="true">&times;</span>
+				</button>
+                
+                <div style="padding-top: 15px; font-size: 85%;">Don't have an account! 
+							<a href="#" onclick="$('#partloginbox').hide(); $('#partsignupbox').show()">Partner Sign Up Here </a>
+                </div>
+            </div>
+            <div style="padding-top: 30px;" class="card-block">
+                <div style="display: none;" id="login-alert" class="alert alert-danger col-md-12"></div>
+                <form id="partloginform" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                  	{% csrf_token %}
+
+					{{ form3.non_field_errors }}
+
+					  {% for hidden_field in form3.hidden_fields %}
+					    {{ hidden_field.errors }}
+					    {{ hidden_field }}
+					  {% endfor %}
+					
+					 {% if messages %}
+					<ul class="messages">
+					    {% for message in messages %}
+					    <li{% if message.error %} class="{{ message.error }}"{% endif %}>{{ message }}</li>
+					    {% endfor %}
+					</ul>
+					{% endif %}
+					
+					{% for field1 in form3.visible_fields %}
+						
+                    <div style="margin-bottom: 25px;" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                       
+                         {{ field1.errors }}	
+                       	 {{ form3.messages }}
+                   			{% if field1 == form3.password %}
+					
+							{% render_field field1 type="password" placeholder=field1.label %}
+						{% else %}
+					
+                        <input
+                       id="{{ field1.name }}"  name="{{ field1.name }}" value=""
+                        placeholder="{{ field1.label }}" />
+                    	{% endif %}    
+                    </div>
+                    {% endfor %}
+                    
+                    
+                     
+                    <div class="input-group">
+                        <div class="form-check">
+                            <label>  
+                                <input id="partlogin-remember" type="checkbox" name="remember" value="1" />Remember me</label>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;" class="form-group">
+                        <!-- Button -->
+                        <div class="col-md-12 controls"> <a  > <input id="partbtn-login" type="submit" value="Login"  name="partbtn-login" class="btn btn-success" > </a>
+ 							<a id="btn-fblogin"href="#" class="btn btn-primary"  type="submit">Login with Facebook</a>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-12 control">
+                            	<div style="float: right; font-size: 80%; position: relative; top: -10px;"><a href="#">Forgot password?</a>
+            
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="partsignupbox" style="display: none; margin-top: 50px;" class="mainbox col-lg-6 offset-md-3 col-md-8 offset-sm-2">
+        <div class="card card-inverse card-info">
+            <div class="card-header">
+                <div class="card-title">Sign Up</div>
+                <div style="float: right; font-size: 85%; position: relative; top: -10px;"><a id="partsigninlink" href="#" onclick="$('#partsignupbox').hide(); $('#partloginbox').show()">Sign In</a>
+                	<button type="button" aria-label="Close" id = "partxBtn" data-toggle="modal" data-target="#partloginModal"class="close" href="#partloginModal">
+ 					 <span aria-hidden="true">&times;</span>
+				</button>
+                </div>
+            </div>
+            <div class="card-block">
+            
+                <form id="partsignupform" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                    <div id="partsignupalert" style="display: none;" class="alert alert-danger">
+                        <p>Error:</p> <span></span>
+                    </div>
+                    {% csrf_token %}
+
+					{{ form4.non_field_errors }}
+
+					  {% for hidden_field in form4.hidden_fields %}
+					    {{ hidden_field.errors }}
+					    {{ hidden_field }}
+					  {% endfor %}
+					
+					 
+					
+					{% for field2 in form4.visible_fields %}
+						
+                    <div style="margin-bottom: 25px;" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                       
+                       {% if field2 == form4.password1  or field2 == form4.password2 %}
+					
+							{% render_field field2 type="password" placeholder=field2.label %}
+						{% else %}
+							{% if not field2.value %}
+					
+		                        <input
+		                       	id="{{ field2.name }}"  name="{{ field2.name }}" value=""
+		                        placeholder="{{ field2.label }}" />
+				            {% else %}
+				            	<input
+		                       	id="{{ field2.name }}"  name="{{ field2.name }}" value="{{ field2.value }}"
+		                        placeholder="{{ field2.label }}" />
+                    		{% endif %}   
+                    	{% endif %}    
+                   		{{ field2.errors }}		
+                    </div>
+                    {% endfor %}
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="offset-md-3 col-lg-9">
+                            <div class="col-md-12 controls"> <a  > <input id="partbtn-signup" type="submit" value="Signup"  name="partbtn-signup" class="btn btn-success" > 
+                            </a><span style="margin-left: 8px;">or</span> 
+                      	</div>	
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid #999; padding-top: 20px;" class="form-group">
+                        <div class="offset-md-3 col-lg-9">
+                            <button id="partbtn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+	</div>
+	</div>
+	
+	<div class="modal-backdrop show" style ="display:none;" id = "backdrop"></div>
+</body>
+
+   	<script src="{% static "assets/js/jquery.js" %}"></script>
+    <script src="{% static "assets/js/functions.js" %}"></script>
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <script src="{% static "assets/js/scripts.js" %}"></script>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/bootstrap/js/bootstrap.min.js" %}"></script>
+    
+    {% if messages %}
+    	{% block loginFailed_js %}
+    		<script>loginErrors();</script>
+    	{% endblock loginFailed_js %}
+    
+    {% endif %}
+    {% if form1.errors %}		{% block extra_js %}
+			<script>
+					loginErrors();
+			</script>
+		{% endblock extra_js %}
+	{% endif %}
+	{% if form2.errors %}
+		{% block extra_js2 %}
+			<script>signupErrors();  </script>
+		{% endblock extra_js2 %}
+	{% endif %}
+	{% if form3.errors %}		
+		{% block extra_js3 %}
+			<script>
+					partloginErrors();
+			</script>
+		{% endblock extra_js3 %}
+	{% endif %}
+	{% if form4.errors %}
+		{% block extra_js4 %}
+			<script>partsignupErrors();  </script>
+		{% endblock extra_js4 %}
+	{% endif %}
+	
+	
+</html>

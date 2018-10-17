@@ -1,0 +1,3 @@
+inital Commit
+Heroku SetuP Complete
+Restore Last commit to implemeted partner login

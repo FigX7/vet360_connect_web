@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+{% load widget_tweaks %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connect App</title>
+    <link rel="shortcut icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	<link rel="icon" href="{% static "assets/img/favicon.ico" %}" type="image/x-icon">
+	
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/canvas.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/dark.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/sticky-dark-top-nav-with-dropdown.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/font-icons.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/vet360Fonts.css" %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href= {% url 'home' %}><span><img src="{% static "assets/img/connect_logo.png" %}"></span> </a>
+        	<button id ="menu"class="dropbtn"  onclick="openMenuDropDown();"><img id = "avatarBtn" title="profile image" class="img-circle img-responsive" src="{{ request.user.ava_user.url }}" ></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                
+                	
+                	
+                	
+        	</div>
+        	<div class="dropdown">
+        	
+
+    <div class="dropdown">
+    	
+  		<span class="caret"></span></button>
+  			<ul class="dropdown-menu" id ="dropMenu">
+  			  	<script>var href = "{% url 'logout' %}";</script>
+               	<script>var hrefP= "{% url 'vetProfile' %}"</script>	
+    			<li><button type="button" class="btn btn-primary" id="logoutBtn"  onclick="window.location = href">Logout</button></li>
+			    <li><button type="button" class="btn btn-primary" id="logoutBtn"  onclick="window.location = hrefP">Profile</button></li>
+			    
+  			</ul>
+</div>    	                
+        </div>
+        
+      
+    </nav>
+    <div class="icon-bar">
+		  <a href = {% url 'vault' %}><i class="icon-file-cabinet" ></i></a></span>
+		  <a href="#"><i class="icon-red-cross"></i></a> 
+		
+	</div>
+	
+	
+	
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" onclick = "$('#myModal').css('display','none');"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>To fully enjoy all of CONNECT's Features please update profile with reqiured fields</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      	<a href =  {% url 'vetProfile' %}><button type="button" class="btn btn-danger" >Update Now</button></a>
+        <button type="button" class="btn btn-danger" onclick="$('#myModal').css('display','none');">Update Later</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+     <div id="map">
+     	
+     	</div>
+     	<!-- Button to Open the Modal -->
+
+  	
+  	
+    <script src="{% static "assets/js/jquery.js" %}"></script>
+    <script src="{% static "assets/js/gMap.js" %}"></script>
+    <script src="{% static "assets/js/my_ajax.js" %}"></script>  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjeTK1U2DLlLUdmzMBEpnhRgZi7M4I5dg&callback=initMap"></script>
+    
+    <script src="{% static "assets/js/functions.js" %}"></script>
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <script src="{% static "assets/js/scripts.js" %}"></script>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+     
+    <script src="{% static "assets/bootstrap/js/bootstrap.min.js" %}"></script>
+   	
+       {% if isSignedUp == null or isSignedUp == False %}
+  		<script>$('#myModal').show();</script>
+  	{% endif %}
+  	
+</body>
+
+</html>
