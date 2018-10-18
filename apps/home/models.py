@@ -75,15 +75,15 @@ class Partner(User):
      ###--------------------------------- Company Info ---------------------###
     user = OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     
-    part_phone = models.CharField(max_length = 12,blank = True, null =True)
-    part_state  = models.CharField(max_length =2,choices=STATE_CHOICES,verbose_name="state",blank = True, null =True)
-    part_zip = models.CharField(max_length = 5 , blank = True, null =True)
-    part_name = models.CharField(max_length = 300, blank = True,null = True)
-    part_address = models.CharField(max_length = 300, blank = True,null = True)
-    part_mission = models.CharField(max_length = 300, blank = True,null = True)
-    part_logo = models.ImageField(upload_to ='partnerLogos',blank  = True,null = True,default="avatars/default.png")
+    partner_phone = models.CharField(max_length = 12,blank = True, null =True)
+    partner_state  = models.CharField(max_length =2,choices=STATE_CHOICES,verbose_name="state",blank = True, null =True)
+    partner_zip = models.CharField(max_length = 5 , blank = True, null =True)
+    partner_name = models.CharField(max_length = 300, blank = True,null = True)
+    partner_address = models.CharField(max_length = 300, blank = True,null = True)
+    partner_mission = models.CharField(max_length = 300, blank = True,null = True)
+    partner_logo = models.ImageField(upload_to ='partnerLogos',blank  = True,null = True,default="avatars/default.png")
      ###--------------------------------- Misc. INfo for web app ---------------------###
-    partner_address = models.CharField(max_length = 255,blank = True, null = True)
+    partner_web_address = models.CharField(max_length = 255,blank = True, null = True)
     partner_isPart = models.FloatField(default = True);
     partner_Lat = models.FloatField(blank = True, null =True,default=0.0)
     partner_Lon = models.FloatField(blank = True, null =True,default=0.0)

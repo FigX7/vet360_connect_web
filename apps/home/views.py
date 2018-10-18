@@ -235,6 +235,8 @@ def Home(request):
         homeUrl = "/vetLogged"
        
         if request.user.is_authenticated:
+            print(request.user.isPart)
+            print(request.user.isVet)
             if request.user.isPart:
                 homeUrl = "/partnerLogged"
                 return redirect(homeUrl)

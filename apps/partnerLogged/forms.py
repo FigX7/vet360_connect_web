@@ -7,10 +7,10 @@ Created on Sept 17, 2018
 from apps.home.models import Veteran,User,Partner
 
 from django.forms.models import ModelForm
+from django import forms
 
-class VeteransSignUp2(ModelForm):
+
+class PartnerInfoForm(forms.Form):
     
-    class Meta:
-        model=Partner
-        exclude = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
+    partner_web_address = forms.CharField(help_text = "Web Address")
         
