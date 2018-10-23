@@ -41,14 +41,14 @@
 
 <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button">
         <div class="container"><a class="navbar-brand" href= {% url 'home' %}><span><img src="{% static "assets/img/connect_logo.png" %}"></span> </a>
-        	<button id ="menu"class="dropbtn"  onclick="openMenuDropDown();"><img id = "avatarBtn" title="profile image" class="img-circle img-responsive" src="{{ request.user.ava_user.url }}" ></button>
+        	<button id ="menu"class="dropbtn"  onclick="openMenuDropDown();"><img id = "avatarBtn" title="profile image" class="img-circle img-responsive" src="{{ request.user.partner.partner_logo.url }}" ></button>
             <div class="collapse navbar-collapse" id="navcol-1">
             </div>
         	<div class="dropdown">
 		    	
 		  		<span class="caret"></span></button>
 		  			<ul class="dropdown-menu" id ="dropMenu">
-		  			  	<script>var href = "{% url 'logout' %}";</script>
+		  			  	<script>var href = "{% url 'logoutCustom' %}";</script>
 		               	
 		    			<li><button type="button" class="btn btn-primary" id="logoutBtn"  onclick="window.location = href">Logout</button></li>
 					   
@@ -63,57 +63,149 @@
     <div class="row">
         <div class="col-md-6">
             <div class="well well-sm">
-                <form class="" method="post">
-                    <fieldset>
+                <form id="partnerInfoForm" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                 
+                    
                         <legend class="text-xs-center header" style = "text-transform: uppercase;">{{ request.user.username }}</legend>
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                        </div>
+                        {% csrf_token %}
+				
+						{{ formPart.non_field_errors }}
+	
+					  	{% for hidden_field in formPart.hidden_fields %}
+					    	{{ hidden_field.errors }}
+				   		 	{{ hidden_field }}
+					 	{% endfor %}
+					
+						{% for field1 in formPart.visible_fields %}
+                        
+	                       
 
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-12 text-xs-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
+							 {% if field1 == formPart.partner_name %} 
+							{{ field1.errors }}	
+                          	<label> {{ field1.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input value = "{{ field1.value }}" id="{{ field1.name }}" name="{{ field1.name }}" placeholder = "{{ field1.value }}" rows="7">
+	                            </div>
+	                        </div>
+							{% elif field1 == formPart.partner_mission %} 
+								{{ field1.errors }}	
+	                          	<label> {{ field1.label }} :</label> 
+		                        <div class="form-group">
+		                            <div class="col-md-10 offset-md-1">
+		                                <textarea value = "{{ field1.value }}" id="{{ field1.name }}" name="{{ field1.name }}" rows="7"> {{ field1.value }} </textarea>
+		                            </div>
+		                        </div>
+							{% elif field1 == formPart.partner_logo  %}
+	                        	{{ field1.errors }}	
+	                          	<label> {{ field1.label }} :</label> 
+	                          	<img  src="{{ request.user.partner.partner_logo.url }}" >
+		                        <div class="form-group">
+		                            <div class="col-md-10 offset-md-1">
+		                               
+										<input value="{{ field1.value }}" type="file" class="text-center center-block file-upload" id="{{ field1.name }}"  placeholder = "{{ field1.value }}" name="{{ field1.name }}" >
+		                            </div>
+		                        </div>
+		                        
+	                    	{% elif field1 == formPart.partner_web_address  %}
+	                        	{{ field1.errors }}	
+	                          	<label> {{ field1.label }} :</label> 
+	                          	
+		                        <div class="form-group">
+		                            <div class="col-md-10 offset-md-1">
+		                               
+										<input value="{{ field1.value }}" id="{{ field1.name }}"  name="{{ field1.name }}"  placeholder = "{{ field1.value }}" >
+		                            </div>
+		                        </div>
+	                       
+	                        
+						{% endif %}
+                      	{% endfor %}
+	                        <div class="form-group">
+	                            <div class="col-md-12 text-xs-center">
+	                                <button id = "btn-PartInfo" name="btn-PartInfo" type="submit" class="btn btn-primary btn-lg">Submit</button>
+	                            </div>
+	                        </div>
+                   
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
+        <div >
             <div>
                 <div class="card ">
-                    <div class="text-xs-center header">Our Office</div>
+                   
                     <div class="card-block text-xs-center">
-                        <h4>Address</h4>
-                        <div id="floating-panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input id="submit" type="button" value="Geocode">
-    </div>
+                        
+                      
+    	<div>  <form id="partnerAddressForm" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
+                 
+                    
+                        {% csrf_token %}
+				
+						{{ formPartAddress.non_field_errors }}
+	
+					  	{% for hidden_field in formPartAddress.hidden_fields %}
+					    	{{ hidden_field.errors }}
+				   		 	{{ hidden_field }}
+					 	{% endfor %}
+					
+						{% for field2 in formPartAddress.visible_fields %}
+                        
+	                       
+
+							 
+							    {% if field2 == formPartAddress.partner_state %}
+                                 {{ field2.errors }}    
+                                 <div class="form-group">
+                                       <label for="sel1">{{ field2.label }}</label>
+                                       
+                                       <select name = "{{ field2.name }}">
+                                       {% for choice in formPartAddress.partner_state.field.choices %}
+                                           {% if field2.value ==  choice.0 %}
+                                               <option selected value = "{{ choice.0 }}" >{{ choice.1 }}</option>
+                                           
+                                           
+                                           {% elif not field2.value  == choice.0 %}
+                                           <option  value = "{{ choice.0 }}" >{{ choice.1 }}</option>
+                                                   
+                                           {% endif %}
+                                       {% endfor %}
+                                       </select>
+                                 </div>   
+							
+	                        {% elif field2 == formPartAddress.partner_phone %} 
+							{{ field2.errors }}	
+                          	<label> {{ field2.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value="{{ field2.value }}" rows="7"></textarea>
+	                            </div>
+	                        </div>
+	                        {% elif field2 == formPartAddress.partner_zip %} 
+							{{ field2.errors }}	
+                          	<label> {{ field2.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value ="{{ field2.value }}" rows="7">
+	                            </div>
+	                        </div>
+		                   {% elif field2 == formPartAddress.partner_address %} 
+							{{ field2.errors }}	
+                          	<label> {{ field2.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input id="{{ field2.name }}" name="{{ field2.name }}"  type="textbox" value="{{ field2.value }}">
+      								
+	                            </div>     
+	                    	
+	                       
+	                        
+						{% endif %}
+                      	{% endfor %}
+	                       <button id = "btn-PartAddress" name="btn-PartAddress" type="submit" onclick="partSetPos();"class="btn btn-primary btn-lg">Submit</button>
+                     		<button id = "btn-geocode" name="btn-geocode" type="button"  class="btn ">Confrim Address</button>
+	                            
+                </form></div>
                         <hr />
                         <div id="map" >
                         </div>
@@ -132,7 +224,7 @@
 	<script src="{% static "assets/js/jquery.js" %}"></script>
     <script src="{% static "assets/js/gMapPartner.js" %}"></script>
     <script src="{% static "assets/js/my_ajax.js" %}"></script>  
-    <script async defer
+    <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjeTK1U2DLlLUdmzMBEpnhRgZi7M4I5dg&callback=initMap">
     </script>
     <script src="{% static "assets/js/functions.js" %}"></script>

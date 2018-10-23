@@ -189,7 +189,7 @@ maxWidth: 350
 function ajaxCall(x){
 		
 		$.ajax({
-	        url: "ajax/getLocation/",
+	        url: "ajax/getLocation",
 	        type:"Post",
 	        dataType: 'json',
 	       
@@ -235,7 +235,7 @@ function showLocation(position) {
  }
  function ajaxCallGet(){
 	 $.ajax({
-	        url: "ajax/getLocation/",
+	        url: "ajax/getLocation",
 	        type:"GET",
 	        dataType: 'json',
 	       

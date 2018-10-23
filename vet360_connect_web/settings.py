@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'localflavor',
     'apps.home',
+    'apps.logout',
     'apps.vault',
     'apps.vaultVolunteer',
     'apps.vetProfile',

@@ -10,6 +10,6 @@ from . import views
 
 
 urlpatterns = [
-    path(r'',views.PartnerLogged,name ='partnerLogged'),
+    path(r'',views.LogoutCustom,name ='logoutCustom'),
     
     ]

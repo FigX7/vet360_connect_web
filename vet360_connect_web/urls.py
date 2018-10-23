@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'partnerLogged', include('apps.partnerLogged.urls')),
     url(r'vault', include('apps.vault.urls')),
     url(r'vault_volunteer', include('apps.vaultVolunteer.urls')),
+    url(r'logout', include('apps.logout.urls')),
     url(r'vetProfile', include('apps.vetProfile.urls')),
-    url(r'^ajax/getLocation/$', views.getLocation, name='getLocation'),
+    url(r'ajax', include('apps.ajax.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

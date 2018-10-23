@@ -82,6 +82,7 @@ class Partner(User):
     partner_address = models.CharField(max_length = 300, blank = True,null = True)
     partner_mission = models.CharField(max_length = 300, blank = True,null = True)
     partner_logo = models.ImageField(upload_to ='partnerLogos',blank  = True,null = True,default="avatars/default.png")
+    
      ###--------------------------------- Misc. INfo for web app ---------------------###
     partner_web_address = models.CharField(max_length = 255,blank = True, null = True)
     partner_isPart = models.FloatField(default = True);
