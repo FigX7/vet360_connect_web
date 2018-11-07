@@ -20,7 +20,8 @@ class PartnerInfoForm(forms.ModelForm):
             
             'partner_phone',
             'partner_zip',
-            'partner_address',
+            'partner_address1',
+            'partner_address2',
             'partner_mission',
             'partner_name',
             'partner_state',
@@ -32,11 +33,18 @@ class PartnerAddressForm(forms.ModelForm):
     class Meta:
         model = Partner
         fields = {
-            'partner_address',
             
-            'partner_phone',
-            'partner_state',
+            
+           
+            'partner_address1',
+            
+            
+            
+            'partner_address2',
             'partner_zip',
+            
+            'partner_state',
+            'partner_phone',
             }
 
 

@@ -54,7 +54,7 @@ class Veteran(User):
     vet_zip = models.CharField(max_length = 5 , blank = True, null =True)
     ###--------------------------------- Combat Info ---------------------###
     vet_branch = models.CharField(max_length = 4,choices=VET_BRANCH_CHOICES,verbose_name="vet_branch")
-    vet_isPurpleHeart = models.BooleanField(blank = True, null =True,choices=VET_BOOL_CHOICES,verbose_name="vet_isPurpleHeart")
+    vet_unit = models.CharField(max_length = 50,blank = True, null =True)
     vet_isPost911 = models.BooleanField(blank = True, null =True,choices=VET_BOOL_CHOICES,verbose_name="vet_isPost911")
     vet_isCombat = models.BooleanField(blank = True, null =True,choices=VET_BOOL_CHOICES,verbose_name="vet_isCombat")
     
@@ -76,10 +76,12 @@ class Partner(User):
     user = OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     
     partner_phone = models.CharField(max_length = 12,blank = True, null =True)
+    partner_address1 = models.CharField(max_length = 300, blank = True,null = True)
+    partner_address2 = models.CharField(max_length = 300, blank = True,null = True)
     partner_state  = models.CharField(max_length =2,choices=STATE_CHOICES,verbose_name="state",blank = True, null =True)
     partner_zip = models.CharField(max_length = 5 , blank = True, null =True)
     partner_name = models.CharField(max_length = 300, blank = True,null = True)
-    partner_address = models.CharField(max_length = 300, blank = True,null = True)
+   
     partner_mission = models.CharField(max_length = 300, blank = True,null = True)
     partner_logo = models.ImageField(upload_to ='partnerLogos',blank  = True,null = True,default="avatars/default.png")
     

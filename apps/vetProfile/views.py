@@ -16,7 +16,7 @@ def VetProfile(request):
     'vet_mobile':user.vet_mobile, 
     'vet_state':user.vet_state,
     'vet_zip':user.vet_zip,
-    'vet_isPurpleHeart':user.vet_isPurpleHeart,
+    'vet_unit':user.vet_unit,
     'vet_isPost911':user.vet_isPost911,
     'vet_isCombat':user.vet_isCombat,
     'vet_isNotifications':user.vet_isNotifications,
@@ -39,6 +39,7 @@ def VetProfile(request):
             
             
             user.vet_isSignedUp = formPers.cleaned_data['vet_isShared']
+            user.vet_unit = formPers.cleaned_data['vet_unit']
             formPers.save()
             
             return redirect("vetProfile")

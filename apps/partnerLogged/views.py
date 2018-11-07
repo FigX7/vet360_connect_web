@@ -17,17 +17,20 @@ def PartnerLogged(request):
         'partner_zip':user.partner_zip,
         'partner_phone':user.partner_phone,
         'partner_name':user.partner_name,
-        'partner_address':user.partner_address,
+        'partner_address1':user.partner_address1,
+        'partner_address2':user.partner_address2,
         'partner_mission':user.partner_mission,
         
     }
     data2 = {
-        
+        'partner_address1':user.partner_address1,
+        'partner_address2':user.partner_address2,
         'partner_state':user.partner_state,
         'partner_zip':user.partner_zip,
         'partner_phone':user.partner_phone,
         
-        'partner_address':user.partner_address,
+        'partner_address1':user.partner_address1,
+        'partner_address2':user.partner_address2,
         
         
     }

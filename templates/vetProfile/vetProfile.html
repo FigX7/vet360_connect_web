@@ -152,14 +152,14 @@
 									  </select>
 								</div>
 								
-							{% elif field1 == formPers.vet_isPurpleHeart or field1 == formPers.vet_isPost911 or field1 == formPers.vet_isCombat or field1 == formPers.vet_isNotifications or field1 == formPers.vet_isShared or field1 == formPers.vet_isSignedUp %}
+							{% elif  field1 == formPers.vet_isPost911 or field1 == formPers.vet_isCombat or field1 == formPers.vet_isNotifications or field1 == formPers.vet_isShared or field1 == formPers.vet_isSignedUp %}
 							
 								{{ field1.errors }}	
 								<div class="form-group">
 									  <label for="sel1">{{ field1.label }}</label>
 									  
 									  <select name = "{{ field1.name }}">
-									  {% for choice in formPers.vet_isPurpleHeart.field.choices %}
+									  {% for choice in formPers.vet_isPost911.field.choices %}
 									  	{% if field1.value ==  choice.0 %}
 									  		<option selected value = "{{ choice.0 }}" >{{ choice.1 }}</option>
 									  	

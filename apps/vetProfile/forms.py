@@ -29,7 +29,7 @@ class VeteransPersonalForm(forms.ModelForm):
     
     ava_user = forms.ImageField(required = False,label="Update Avatar")
     vet_branch = forms.ChoiceField(choices=VET_BRANCH_CHOICES, required = False,label="Branch:")
-    vet_isPurpleHeart = forms.ChoiceField(choices=VET_BOOL_CHOICES, required = False,label="Purple heart Recipient:")
+    
     vet_isPost911 = forms.ChoiceField(choices=VET_BOOL_CHOICES, required = False,label="Post 911 Veteran:")
     vet_isCombat = forms.ChoiceField(choices=VET_BOOL_CHOICES, required = False,label="Veteran Combat Action Award or Direct Combat Attachment:")
     vet_isNotifications = forms.ChoiceField(choices=VET_BOOL_CHOICES, required = False,label="Recieve Notifications:")
@@ -47,7 +47,7 @@ class VeteransPersonalForm(forms.ModelForm):
                   'vet_mobile', 
                   'vet_state',
                   'vet_zip',
-                  'vet_isPurpleHeart',
+                  'vet_unit',
                   'vet_isPost911',
                   'vet_isCombat',
                   'vet_isNotifications',

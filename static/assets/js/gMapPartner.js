@@ -27,7 +27,8 @@
 	}
 	function geocodeAddress(geocoder, resultsMap) {
 		
-	    var address = document.getElementById('partner_address').value;
+	    var address = document.getElementById('partner_address1').value;
+	    address = address + ',' + document.getElementById('partner_address2').value +','  + document.getElementById('partner_zip').value ;
 	    geocoder.geocode({'address': address}, function(results, status) {
 	      if (status === 'OK') {
 	        resultsMap.setCenter(results[0].geometry.location);

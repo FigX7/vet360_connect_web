@@ -152,7 +152,7 @@
 						{% for field2 in formPartAddress.visible_fields %}
                         
 	                       
-
+								
 							 
 							    {% if field2 == formPartAddress.partner_state %}
                                  {{ field2.errors }}    
@@ -171,9 +171,10 @@
                                            {% endif %}
                                        {% endfor %}
                                        </select>
-                                 </div>   
+                                 </div>
+                                {% endif %}   
 							
-	                        {% elif field2 == formPartAddress.partner_phone %} 
+	                        {% if field2 == formPartAddress.partner_phone %} 
 							{{ field2.errors }}	
                           	<label> {{ field2.label }} :</label> 
 	                        <div class="form-group">
@@ -181,7 +182,8 @@
 	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value="{{ field2.value }}" rows="7"></textarea>
 	                            </div>
 	                        </div>
-	                        {% elif field2 == formPartAddress.partner_zip %} 
+	                        {% endif %}
+	                        {% if field2 == formPartAddress.partner_zip %} 
 							{{ field2.errors }}	
                           	<label> {{ field2.label }} :</label> 
 	                        <div class="form-group">
@@ -189,7 +191,8 @@
 	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value ="{{ field2.value }}" rows="7">
 	                            </div>
 	                        </div>
-		                   {% elif field2 == formPartAddress.partner_address %} 
+	                        {% endif %}
+		                   {% if field2 == formPartAddress.partner_address1 or field2 == formPartAddress.partner_address2 %} 
 							{{ field2.errors }}	
                           	<label> {{ field2.label }} :</label> 
 	                        <div class="form-group">

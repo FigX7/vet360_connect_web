@@ -86,7 +86,13 @@ var iconBase = "static/assets/img/avatar_mil.png";
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          
+          var marker = new google.maps.Marker({
+              position: pos,
+              draggable: false,
+              title: "My Location",
+              map: map,
+              
+          });
           infoWindow.open(map);
           map.setCenter(pos);
         }, function() {
