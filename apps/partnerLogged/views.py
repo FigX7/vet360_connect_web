@@ -1,14 +1,14 @@
 
-from .forms import PartnerInfoForm,PartnerAddressForm
+from .forms import PartnerInfoForm
 # Create your views here.
 from django.shortcuts import render, redirect
 from apps.home.models import Partner
 def PartnerLogged(request):
     boolPartInfo = 'btn-PartInfo' in request.POST
-    boolPartAddress = 'btn-PartAddress' in request.POST
+    
     boolPartGeoCode ='btn-geocode' in request.POST
     print(boolPartInfo)
-    print(boolPartAddress)
+    
     print(boolPartGeoCode)
     user = request.user.partner
     data = {
@@ -22,26 +22,14 @@ def PartnerLogged(request):
         'partner_mission':user.partner_mission,
         
     }
-    data2 = {
-        'partner_address1':user.partner_address1,
-        'partner_address2':user.partner_address2,
-        'partner_state':user.partner_state,
-        'partner_zip':user.partner_zip,
-        'partner_phone':user.partner_phone,
-        
-        'partner_address1':user.partner_address1,
-        'partner_address2':user.partner_address2,
-        
-        
-    }
-    if request.method == 'POST' and boolPartInfo:
+   
+    if request.method == 'POST':
         print(request.POST)
         user = request.user.partner
         formPart = PartnerInfoForm(request.POST,request.FILES,instance=user)
-        formPartAddress = PartnerAddressForm(data,initial=data2)
+        
         context = {
                 'formPart':formPart,
-                'formPartAddress':formPartAddress,
                 'user':user,
             }
         
@@ -49,8 +37,11 @@ def PartnerLogged(request):
             formPart.save(commit=False)
             
             
+            
+            
            
             formPart.save()
+
             
             return redirect("partnerLogged")
         else:
@@ -58,66 +49,19 @@ def PartnerLogged(request):
             print(formPart.errors)
             
             formPart = PartnerInfoForm(request.POST,request.FILES,instance=user) 
-            formPartAddress = PartnerAddressForm()
+            
             context = {
                 'formPart':formPart,
-                'formPartAddress':formPartAddress,
                 'user':user,
             }
             print(request.POST)
             return render(request,"partnerLogged/partnerLogged.html",context) 
-             
-    elif  request.method == 'POST' and boolPartAddress:
-        user = request.user.partner
-        formPart = PartnerInfoForm(data,initial=data)
-        formPartAddress = PartnerAddressForm(request.POST,request.FILES,instance=user)
-        context = {
-                'formPart':formPart,
-                'formPartAddress':formPartAddress,
-                'user':user,
-            }
-        
-        if formPartAddress.is_valid():
-            formPart.save(commit=False)
-            
-            
-           
-            formPartAddress.save()
-            
-            return redirect("partnerLogged")
-        else:
-            print(formAddress.is_valid())
-            print(formPartAddress.errors)
-            
-            formPart = PartnerInfoForm() 
-            formPartAddress = PartnerAddressForm(request.POST,request.FILES,instance=user)
-            context = {
-                'formPart':formPart,
-                'formPartAddress':formPartAddress,
-                'user':user,
-            }
-            print(request.POST)
-            return render(request,"partnerLogged/partnerLogged.html",context)    
-        
     
-       
-    elif request.method == "POST" :
-        if formPartAddress.is_valid():
-            formPart.save(commit=False)
-            
-            
-           
-            formPartAddress.save()
-            
-            
-        return redirect("partnerLogged")
     else:
         user = request.user.partner
-        formPart = PartnerInfoForm(data,initial=data)   
-        formPartAddress = PartnerAddressForm(data,initial=data2)
+        formPart = PartnerInfoForm(data,initial=data)
         context = {
                 'formPart':formPart,
-                'formPartAddress':formPartAddress,
                 'user':user,
             }
         

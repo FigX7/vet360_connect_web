@@ -76,51 +76,103 @@
 				   		 	{{ hidden_field }}
 					 	{% endfor %}
 					
-						{% for field1 in formPart.visible_fields %}
-                        
-	                       
-
-							 {% if field1 == formPart.partner_name %} 
-							{{ field1.errors }}	
-                          	<label> {{ field1.label }} :</label> 
+						 
+							{{  formPart.partner_name.errors }}	
+                          	<label> {{ formPart.partner_name.label }} :</label> 
 	                        <div class="form-group">
 	                            <div class="col-md-10 offset-md-1">
-	                                <input value = "{{ field1.value }}" id="{{ field1.name }}" name="{{ field1.name }}" placeholder = "{{ field1.value }}" rows="7">
+	                                <input value = "{{  formPart.partner_name.value }}" id="{{  formPart.partner_name.name }}" name="{{  formPart.partner_name.name }}" placeholder = "{{  formPart.partner_name.value }}" rows="7">
 	                            </div>
 	                        </div>
-							{% elif field1 == formPart.partner_mission %} 
-								{{ field1.errors }}	
-	                          	<label> {{ field1.label }} :</label> 
+							 
+								{{ formPart.partner_mission.errors }}	
+	                          	<label> {{ formPart.partner_mission.label }} :</label> 
 		                        <div class="form-group">
 		                            <div class="col-md-10 offset-md-1">
-		                                <textarea value = "{{ field1.value }}" id="{{ field1.name }}" name="{{ field1.name }}" rows="7"> {{ field1.value }} </textarea>
+		                                <textarea value = "{{ formPart.partner_mission.value }}" id="{{ formPart.partner_mission.name }}" name="{{ formPart.partner_mission.name }}" rows="7"> {{ formPart.partner_mission.value }} </textarea>
 		                            </div>
 		                        </div>
-							{% elif field1 == formPart.partner_logo  %}
-	                        	{{ field1.errors }}	
-	                          	<label> {{ field1.label }} :</label> 
+							
+	                        	{{ formPart.partner_logo.errors }}	
+	                          	<label> {{ formPart.partner_logo.label }} :</label> 
 	                          	<img  src="{{ request.user.partner.partner_logo.url }}" >
 		                        <div class="form-group">
 		                            <div class="col-md-10 offset-md-1">
 		                               
-										<input value="{{ field1.value }}" type="file" class="text-center center-block file-upload" id="{{ field1.name }}"  placeholder = "{{ field1.value }}" name="{{ field1.name }}" >
+										<input value="{{ formPart.partner_logo.value }}" type="file" class="text-center center-block file-upload" id="{{ formPart.partner_logo.name }}"  placeholder = "{{ formPart.partner_logo.value }}" name="{{ formPart.partner_logo.name }}" >
 		                            </div>
 		                        </div>
 		                        
-	                    	{% elif field1 == formPart.partner_web_address  %}
-	                        	{{ field1.errors }}	
-	                          	<label> {{ field1.label }} :</label> 
+	                    	
+	                        	{{ formPart.partner_web_address.errors }}	
+	                          	<label> {{ formPart.partner_web_address.label }} :</label> 
 	                          	
 		                        <div class="form-group">
 		                            <div class="col-md-10 offset-md-1">
 		                               
-										<input value="{{ field1.value }}" id="{{ field1.name }}"  name="{{ field1.name }}"  placeholder = "{{ field1.value }}" >
+										<input value="{{ formPart.partner_web_address.value }}" id="{{ formPart.partner_web_address.name }}"  name="{{ formPart.partner_web_address.name }}"  placeholder = "{{ formPart.partner_web_address.value }}" >
 		                            </div>
 		                        </div>
 	                       
+		                        {{ formPart.partner_phone.errors }}	
+	                          	<label> {{ formPart.partner_phone.label }} :</label> 
+		                        <div class="form-group">
+		                            <div class="col-md-10 offset-md-1">
+		                                <input  id="{{ formPart.partner_phone.name }}" name="{{ formPart.partner_phone.name }}" value="{{ formPart.partner_phone.value }}" rows="7"></textarea>
+		                            </div>
+		                        </div>
+						
+                                 
+                                
+                            {{ formPart.partner_address1.errors }}	
+                          	<label> {{ formPart.partner_address1.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input id="{{ formPart.partner_address1.name }}" name="{{ formPart.partner_address1.name }}"  type="textbox" value="{{ formPart.partner_address1.value }}">
+      								
+	                            </div>     
+	                    	</div>
+	                    	{{ formPart.partner_address2.errors }}	
+                          	<label> {{ formPart.partner_address2.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input id="{{ formPart.partner_address2.name }}" name="{{ formPart.partner_address2.name }}"  type="textbox" value="{{ formPart.partner_address2.value }}">
+      								
+	                            </div>     
+	                    	</div>      
+							
 	                        
-						{% endif %}
-                      	{% endfor %}
+							{{ formPart.partner_state.errors }}    
+                                 <div class="form-group">
+                                       <label for="sel1">{{ formPart.partner_state.label }}</label>
+                                       
+                                       <select name = "{{ formPart.partner_state.name }}">
+                                       {% for choice in formPart.partner_state.field.choices %}
+                                           {% if formPart.partner_state.value ==  choice.0 %}
+                                               <option selected value = "{{ choice.0 }}" >{{ choice.1 }}</option>
+                                           
+                                           
+                                           {% elif not formPart.partner_state.value  == choice.0 %}
+                                           <option  value = "{{ choice.0 }}" >{{ choice.1 }}</option>
+                                                   
+                                           {% endif %}
+                                       {% endfor %}
+                                       </select>
+                                 </div>
+	                       
+	                        
+							{{ formPart.partner_zip.errors }}	
+                          	<label> {{ formPart.partner_zip.label }} :</label> 
+	                        <div class="form-group">
+	                            <div class="col-md-10 offset-md-1">
+	                                <input  id="{{ formPart.partner_zip.name }}" name="{{ formPart.partner_zip.name }}" value ="{{ formPart.partner_zip.value }}" rows="7">
+	                            </div>
+	                        </div>
+	                        
+		                   
+							
+	                       
+	                 
 	                        <div class="form-group">
 	                            <div class="col-md-12 text-xs-center">
 	                                <button id = "btn-PartInfo" name="btn-PartInfo" type="submit" class="btn btn-primary btn-lg">Submit</button>
@@ -138,75 +190,11 @@
                         
                       
     	<div>  <form id="partnerAddressForm" class="" role="form" enctype="multipart/form-data" method="POST" novalidate>
-                 
+                 {% csrf_token %}
                     
-                        {% csrf_token %}
-				
-						{{ formPartAddress.non_field_errors }}
-	
-					  	{% for hidden_field in formPartAddress.hidden_fields %}
-					    	{{ hidden_field.errors }}
-				   		 	{{ hidden_field }}
-					 	{% endfor %}
-					
-						{% for field2 in formPartAddress.visible_fields %}
-                        
-	                       
-								
-							 
-							    {% if field2 == formPartAddress.partner_state %}
-                                 {{ field2.errors }}    
-                                 <div class="form-group">
-                                       <label for="sel1">{{ field2.label }}</label>
-                                       
-                                       <select name = "{{ field2.name }}">
-                                       {% for choice in formPartAddress.partner_state.field.choices %}
-                                           {% if field2.value ==  choice.0 %}
-                                               <option selected value = "{{ choice.0 }}" >{{ choice.1 }}</option>
-                                           
-                                           
-                                           {% elif not field2.value  == choice.0 %}
-                                           <option  value = "{{ choice.0 }}" >{{ choice.1 }}</option>
-                                                   
-                                           {% endif %}
-                                       {% endfor %}
-                                       </select>
-                                 </div>
-                                {% endif %}   
-							
-	                        {% if field2 == formPartAddress.partner_phone %} 
-							{{ field2.errors }}	
-                          	<label> {{ field2.label }} :</label> 
-	                        <div class="form-group">
-	                            <div class="col-md-10 offset-md-1">
-	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value="{{ field2.value }}" rows="7"></textarea>
-	                            </div>
-	                        </div>
-	                        {% endif %}
-	                        {% if field2 == formPartAddress.partner_zip %} 
-							{{ field2.errors }}	
-                          	<label> {{ field2.label }} :</label> 
-	                        <div class="form-group">
-	                            <div class="col-md-10 offset-md-1">
-	                                <input  id="{{ field2.name }}" name="{{ field2.name }}" value ="{{ field2.value }}" rows="7">
-	                            </div>
-	                        </div>
-	                        {% endif %}
-		                   {% if field2 == formPartAddress.partner_address1 or field2 == formPartAddress.partner_address2 %} 
-							{{ field2.errors }}	
-                          	<label> {{ field2.label }} :</label> 
-	                        <div class="form-group">
-	                            <div class="col-md-10 offset-md-1">
-	                                <input id="{{ field2.name }}" name="{{ field2.name }}"  type="textbox" value="{{ field2.value }}">
-      								
-	                            </div>     
-	                    	
-	                       
-	                        
-						{% endif %}
-                      	{% endfor %}
-	                       <button id = "btn-PartAddress" name="btn-PartAddress" type="submit" onclick="partSetPos();"class="btn btn-primary btn-lg">Submit</button>
-                     		<button id = "btn-geocode" name="btn-geocode" type="button"  class="btn ">Confrim Address</button>
+                       
+	                      
+                     		<button id = "btn-geocode" name="btn-geocode" type="button"class="btn ">Confrim Address</button>
 	                            
                 </form></div>
                         <hr />

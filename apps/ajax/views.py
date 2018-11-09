@@ -147,6 +147,9 @@ def getGeocode(request):
             geoCoords = json.loads(toDictGeocode)
             partObj.partner_Lat = geoCoords[0]["geometry"]["location"]["lat"]
             partObj.partner_Lon = geoCoords[0]["geometry"]["location"]["lng"]
+            print(partObj.partner_Lat)
+            print(partObj.partner_Lon)
+            partObj.save()
             geoDict = {'geoCoords':geoCoords}
             return JsonResponse(geoDict)
         else:

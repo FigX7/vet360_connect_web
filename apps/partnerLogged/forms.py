@@ -28,25 +28,6 @@ class PartnerInfoForm(forms.ModelForm):
             'partner_web_address',
             'partner_logo',
             }
-class PartnerAddressForm(forms.ModelForm):
-   
-    class Meta:
-        model = Partner
-        fields = {
-            
-            
-           
-            'partner_address1',
-            
-            
-            
-            'partner_address2',
-            'partner_zip',
-            
-            'partner_state',
-            'partner_phone',
-            }
-
 
 
 

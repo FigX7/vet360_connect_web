@@ -21,6 +21,7 @@
 	 document.getElementById('btn-geocode').addEventListener('click', function() {
          
 		 geocodeAddress(geocoder, map);
+		 alert("TEST00");
 		 
        });
 	
@@ -39,6 +40,7 @@
 	        });
 	        geocodeResults = results;
 	        part_Pos = results[0].geometry.location;
+	        ajaxGeocode(part_Pos);
 	       
 	      } else {
 	        alert('Geocode was not successful for the following reason: ' + status);
@@ -69,10 +71,7 @@
 			});	
 		}
 
-	function partSetPos(){
-		ajaxGeocode(part_Pos);
-    	
-	}
+	
 	
 $(document).ready(function() {
     	
