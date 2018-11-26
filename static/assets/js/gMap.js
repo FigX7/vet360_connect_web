@@ -160,16 +160,22 @@ maxWidth: 350
         });
         
         //CUSSOMIZE INFO WINDOW RIC GUIDANCE 
+        var stringURL = '<a href = "http://' + partner['partner_web_address'] + "\">" + partner['partner_web_address']+"</a>"
+        
         var content = '<div id="iw-container">' +
         '<div class="iw-title">'+ partner['username']  +  '</div>' +
         '<div class="iw-content">' +
           '<div class="iw-subTitle"></div>' +
-          '<div class="iw-img"><img src="media/'+ partner['ava_user']  +'" height="115" width="83"></div>' +
-          '<p>ADD CUSTOM CAPTION OR CONTENTS !!!!!!!</p>' +
-          '<div class="iw-subTitle">Contacts</div>' +
-          '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-          '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
-        '</div>' +
+          '<div class="iw-img"><img src="media/'+ partner['partner_logo']  +'" height="115" width="83"></div>' +
+          
+          "<h1>Mission: </h1>" + 
+          "<p>" + partner['partner_mission'] + '<br></p>' + 
+          "Address: " +  partner['partner_address1'] + '<br>'+
+          partner['partner_address2'] + '<br>'+
+          "State: " +partner['partner_state'] + '<br>'+
+          "Zipcode: " +partner['partner_zip'] + '<br>'+
+          "Web Address: " +"\'" + stringURL + '\''+'<br>'+
+          "Phone #: " +partner['partner_phone'] + '<br>'+'</div>' +
         '<div class="iw-bottom-gradient"></div>' +
       '</div>';  
 var infowindow = new google.maps.InfoWindow({

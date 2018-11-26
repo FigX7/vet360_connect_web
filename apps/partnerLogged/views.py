@@ -38,10 +38,11 @@ def PartnerLogged(request):
             
             
             
-            
+            user.ava_user = user.partner_logo
+            user.save()
            
             formPart.save()
-
+            
             
             return redirect("partnerLogged")
         else:

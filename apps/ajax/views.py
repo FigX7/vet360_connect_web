@@ -54,24 +54,29 @@ def getLocation(request):
                 try:
                     if obj.vet_isSignedUp == True:
                         geoQueryVets = Veteran.objects.filter(vet_point__distance_lt=(point, Distance(km=50))).defer('vet_point').values('vet_Lat','vet_Lon','vet_branch','username','ava_user')
-                        geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('partner_Lat','partner_Lon','username','ava_user')
+                        geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('username','partner_phone','partner_address1','partner_address2','partner_state','partner_zip','partner_name','partner_mission','partner_logo','partner_web_address','partner_Lat','partner_Lon')
+                        
                     else:
-                        geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('partner_Lat','partner_Lon','username','ava_user')
+                        geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('username','partner_phone','partner_address1','partner_address2','partner_state','partner_zip','partner_name','partner_mission','partner_logo','partner_web_address','partner_Lat','partner_Lon')
+                        
                         geoQueryVets  = {}
                 except:
-                    print(ERRORS)
+                    print(ERORS)
                 print(geoQueryPartners)
                 listVetsPoints = {}
                 listPartnersPoints = {}
                 i = 0;
                 i2 = 0;
                 for x in geoQueryVets:
+                    
                     i = i+1
                     listVetsPoints[i] = x
                 for y in geoQueryPartners:
                     i2 = i2+1
                     listPartnersPoints[i2] = y
+                    
                 #jsonGeo = json.dumps()listVets)
+               
                 context = {
                         "queryVet": listVetsPoints,
                         "queryPartners": listPartnersPoints,
@@ -100,7 +105,7 @@ def getLocation(request):
                 geoQuery = "test get data"
                 try:
                     geoQueryVets = Veteran.objects.filter(vet_point__distance_lt=(point, Distance(km=50))).defer('vet_point').values('vet_Lat','vet_Lon','vet_branch','username','ava_user')
-                    geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('partner_Lat','partner_Lon','username')
+                    geoQueryPartners = Partner.objects.filter(partner_point__distance_lt=(point, Distance(km=50))).defer('partner_point').values('partner_Lat','partner_Lon','username','partner_address1','partner_zip')
                 except:
                     print(ERRORS)
                 print(geoQueryPartners)
