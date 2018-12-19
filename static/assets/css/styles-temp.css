@@ -1,0 +1,363 @@
+.img-fluid {
+    max-width: 60%;
+    height: auto;
+}
+
+.features-icons {
+  padding-top:7rem;
+  padding-bottom:7rem;
+}
+
+.text-center {
+  text-align:center!important;
+}
+
+.bg-light {
+  background-color:#f8f9fa!important;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display:block;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family:Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.5;
+  color:#212529;
+  text-align:left;
+  background-color:#fff;
+}
+
+html {
+  font-family:sans-serif;
+  line-height:1.15;
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+  -ms-overflow-style:scrollbar;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+
+/* Hero Div */
+div.jumbotron.carousel-hero {
+  color:#fff;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+  padding-top:100px;
+  padding-bottom:100px;
+  margin-bottom:0;
+  height:100vh;
+}
+
+div.jumbotron.hero-nature {
+  background-image: url('../img/american-flag-home.jpg');
+  box-sizing: border-box;
+  height:100vh;
+  background-position: 10% 50%;
+  background-repeat: no-repeat;
+}
+
+
+h1.hero-title, h2.hero-title, h3.hero-title {
+  text-shadow:0 3px 3px rgba(0,0,0,0.4);
+  color:#fff;
+  
+}
+
+p.hero-subtitle {
+  max-width:600px;
+  margin:25px auto;
+  padding:10px 15px;
+  color:#fff;
+}
+
+/* Vet Resource Buttons */
+vet-res , .btn:not(:disabled):not(.disabled){
+	background-color:#7e827eab;	
+	margin: 1vh;
+	border-width: 0px;
+	border-radius: 10%;
+	
+}
+button.btn.btn-primary:hover{
+    background-color: #31a8df
+    color: white;
+    
+}
+vet-res, .btn:not(:disabled):not(.disabled) {
+    background-color: #7e827eab;
+    margin: 1vh;
+    border-width: 0px;
+    border-radius: 10%;
+    border-radius:1em;
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius:1em;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+	h1.hero-title, h2.hero-title, h3.hero-title {
+		position:relative;
+		top:-10vh;
+	}
+	vet-res,.btn-group{
+		    top: -12vh;
+	
+	}
+	p.hero-subtitle {
+  		position:relative;
+		top:-10vh;
+	}
+	button.btn.btn-primary:hover{
+    background-color: #31a8df
+    color: white;
+    border: 0px;
+    
+	}
+	
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-width:0px;
+}
+button#xBtn.close{
+    position: relative;
+    top: -3.5vh;
+}
+#partxBtn.close{
+    position: relative;
+    top: -3.5vh;
+}
+#logoutBtn{
+    color: black;
+    background-color:white;
+    
+}
+#logoutBtn:hover{
+	background-color: #fec325;
+	
+}
+@media only screen and (min-device-width : 961px) and (max-device-width : 1200px) {
+	#logoutBtn{
+    position:relative;
+    left: 30%;
+    
+	}
+}
+
+@media only screen and (min-device-width : 1201px) {
+	#logoutBtn{
+    position:relative;
+    left: 20%;
+    
+	}
+}
+/*-
+/*------------ FOOTER --------------- */
+.bottommargin-sm {
+    margin-bottom: 30px!important;
+    font-family: 'font-icons';
+}
+/* Login Modal */
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index:100000;
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 20px;
+  background-color: #fec325b5;
+  
+  
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+      
+      background-color: #191d19bf;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+/*    CUSTOM DROPDOWNS        */
+
+.big {
+  font-size: 1.2em;
+}
+
+.small {
+  font-size: .7em;
+}
+
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+  margin-top: 0px;
+}
+
+.custom-dropdown select {
+    background-color: #fec325b5;
+    color: #252122;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 0.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+}
+
+/*------------------------------------------ Vault */
+.dropbtn{
+	
+    background-color: #7e827e;
+    border: none;
+    position:absolute;
+	left:80vw;
+	
+}
+
+#avatarBtn{
+	max-height:4vw;
+}
+
+
+
+@media only screen and (max-width : 420px){
+	.dropbtn{
+		position:relative;
+		left:25%
+	}
+
+	
+}
+@media only screen and (min-width : 768px){
+	.dropbtn{
+		position:relative;
+		left:65%
+	}
+	/* #avatarBtn{
+		height:7vw;
+		width:25vw;
+	} */
+	
+}
+
+
+@media only screen and (max-width : 421px){
+	.dropbtn{
+		position:relative;
+		left:30%
+	}
+	
+	
+}
+@media only screen and (max-width : 421px){
+	.dropbtn{
+		position:relative;
+		left:10vw;
+	}
+	
+	.dropdown  {
+    	position:absolute;
+    	top: 98%;
+   		left: 55%;
+	}
+	#avatarBtn {
+    	max-height: 7vw;
+	}
+}
+
+.dropdown  {
+    position:absolute;
+    top: 98%;
+   	left: 75%;
+}
+@media only screen and (min-width: 1680px) and (max-width: 1980px){
+	.dropbtn {
+	    
+	    background-color: #7e827e;
+	    border: none;
+        position: relative;
+    	left: 65vw;
+	}
+	.navigation-clean-button .navbar-brand{
+	
+		position:relative;
+		right:20%;
+	}
+	.dropdown{
+	    position: absolute;
+    	top: 98%;
+    	left: 85%;
+	}
+}
+.iw-title{
+	color:red;
+    text-align: -webkit-center;
+    font-size:20px;
+    font-weight:900;
+}
+.iw-img{
+    text-align: -webkit-center;
+}
+#floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+  }

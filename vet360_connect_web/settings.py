@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_user_agents',
     'apps.ajax',
+    'apps.temp_page',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

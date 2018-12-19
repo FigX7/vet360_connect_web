@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'logout', include('apps.logout.urls')),
     url(r'vetProfile', include('apps.vetProfile.urls')),
     url(r'ajax', include('apps.ajax.urls')),
+    url(r'', include('apps.ajax.urls')),
+    url(r'temp_page', include('apps.temp_page.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
